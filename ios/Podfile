@@ -5,6 +5,9 @@ require Pod::Executable.execute_command('node', ['-p',
     {paths: [process.argv[1]]},
   )', __dir__]).strip
 
+# Require Expo autolinking
+require File.join(File.dirname(`node --print "require.resolve('expo/package.json')"`), "scripts/autolinking")
+
 platform :ios, min_ios_version_supported
 prepare_react_native_project!
 
@@ -17,10 +20,16 @@ end
 target 'react_native_flow_2' do
   config = use_native_modules!
 
+  # Add Expo modules support
+  use_expo_modules!
+
   use_react_native!(
     :path => config[:reactNativePath],
     # An absolute path to your application root.
-    :app_path => "#{Pod::Config.instance.installation_root}/.."
+    :app_path => "#{Pod::Config.instance.installation_root}/..",
+    # Disable New Architecture to avoid build issues
+    :fabric_enabled => false,
+    :new_arch_enabled => false
   )
 
   post_install do |installer|

@@ -1,0 +1,7 @@
+** BUILD FAILED **
+
+
+The following build commands failed:
+	CompileC /Users/carinlester/Library/Developer/Xcode/DerivedData/react_native_flow_2-byvwtxcmojehowfkconaxmsbtsou/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/react-native-safe-area-context.build/Objects-normal/arm64/RNCSafeAreaViewShadowNode.o /Users/carinlester/Desktop/Flutter/react_native_flow/react_native_flow_2/node_modules/react-native-safe-area-context/common/cpp/react/renderer/components/safeareacontext/RNCSafeAreaViewShadowNode.cpp normal arm64 c++ com.apple.compilers.llvm.clang.1_0.compiler (in target 'react-native-safe-area-context' from project 'Pods')
+	Building workspace react_native_flow_2 with scheme react_native_flow_2 and configuration Debug
+(2 failures)
